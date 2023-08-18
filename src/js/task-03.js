@@ -1,3 +1,4 @@
+
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -12,3 +13,27 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+const galleryEl = document.querySelector('.gallery')
+const galleryitem = images.map(image => `<li><img src="${image.url}"/></li>`).join('');
+galleryEl.insertAdjacentHTML("beforeend", galleryitem)
+
+
+const style = `
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      }
+
+      .gallery li { 
+      margin: 5px;
+      }
+
+      .gallery img {
+      max-width: 50%;
+      }
+  </style>`;
+
+    document.head.insertAdjacentHTML('beforeend', style);
