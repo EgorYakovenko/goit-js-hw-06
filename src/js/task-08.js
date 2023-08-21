@@ -8,7 +8,7 @@ const onSubmit = (event) => {
 
     if (email.value === "" || password.value === "") {
         alert("Заполните все поля!")
-        
+        return;
   }
 
     const dataObject = {};
